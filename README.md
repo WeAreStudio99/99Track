@@ -72,6 +72,16 @@ $ yarn run start:dev
 $ yarn run start:prod
 ```
 
+## Manage Database structure
+
+This project is using [Prisma](https://www.prisma.io/) to manage the database structure. You can synchronize your database with the state described in the `schema.primsa` file and generate the associated [client](https://www.prisma.io/docs/concepts/components/prisma-client) by running :
+
+```bash
+yarn run db:synch
+```
+
+Keep in mind that yout must run this command if this is the first time you're launching the application and each time you update the `schema.prisma` file.
+
 ## Test
 
 ```bash
@@ -83,4 +93,12 @@ $ yarn run test:watch
 
 # test coverage
 $ yarn run test:cov
+```
+
+## Tooling
+
+You can lunch [Primsa Studio](https://www.prisma.io/studio), a tool that lets you visualize and modify your DB live data by running the following command :
+
+```bash
+yarn run db:studio
 ```
