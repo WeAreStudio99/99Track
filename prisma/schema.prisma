@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email    String   @unique
+  username String
+  password String
+  objects  Object[]
+  steps    Step[]
+}
+
+model Picture {
+  id     String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  url    String
+  step   Step   @relation(fields: [stepId], references: [id])
+  stepId String @unique @db.Uuid
+}
+
+model Step {
+  id               String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  accuracy         Float?
+  altitude         Float?
+  altitudeAccuracy Float?
+  heading          Float?
+  latitude         Float?
+  longitude        Float?
+  speed            Float?
+  description      String?
+  picture          Picture?
+  object           Object   @relation(fields: [objectId], references: [id])
+  objectId         String   @unique @db.Uuid
+  user             User?    @relation(fields: [userId], references: [id])
+  userId           String?  @db.Uuid
+}
+
+model Object {
+  id    String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name  String
+  steps Step[]
+  users User[]
+}
