@@ -74,7 +74,7 @@ $ yarn run start:prod
 
 ## Manage Database structure
 
-This project is using [Prisma](https://www.prisma.io/) to manage the database structure. You can synchronize your database with the state described in the `schema.primsa` file and generate the associated [client](https://www.prisma.io/docs/concepts/components/prisma-client) by running :
+This project is using [Prisma](https://www.prisma.io/) to manage the database structure. You can synchronize your database with the state described in the `schema.primsa` file and generate the associated [Prisma Client](https://www.prisma.io/docs/concepts/components/prisma-client) by running :
 
 ```bash
 yarn run db:synch
@@ -101,4 +101,18 @@ You can lunch [Primsa Studio](https://www.prisma.io/studio), a tool that lets yo
 
 ```bash
 yarn run db:studio
+```
+
+You can generate a new version of the [Prisma Client](https://www.prisma.io/docs/concepts/components/prisma-client) by running the following command :
+
+```bash
+yarn run db:generate-client
+```
+
+## Cleaning
+
+You can delete the `/dist` build output, the `node_modules` folder and re-install all the dependencies by running the following command :
+
+```bash
+yarn run reset
 ```
