@@ -6,7 +6,7 @@ Welcome to the **99Track-api** development environment setup guide. This documen
 
 ### Node.js
 
-We use [NVM (Node Version Manager)](https://github.com/nvm-sh/nvm) to maintain a consistent Node.js version. Install NVM and set the Node.js version for this project with::
+We use [NVM (Node Version Manager)](https://github.com/nvm-sh/nvm) to ensure a consistent Node.js version. Install NVM and set the Node.js version for this project with :
 
 ```bash
 nvm install
@@ -14,7 +14,7 @@ nvm install
 
 ### Yarn
 
-Yarn is the package manager of choice for this project. Ensure you are using Node.js 20 _(lts/iron)_ and then
+Yarn is the package manager of choice for this project. Make sure you are using Node.js 20 _(lts/iron)_ and then
 activate `corepack` to use Yarn :
 
 ```bash
@@ -23,9 +23,9 @@ corepack enable
 
 ### Visual Studio Code
 
-Uniformity in the TypeScript version used across different development setups is crucial. For VSCode users, ensure that
+Consistency in TypeScript versions is crucial. For VSCode users, ensure that
 you [use the workspace version of TypeScript](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript)
-rather than the built-in version provided by VSCode.
+and not the built-in version provided by VSCode.
 
 ### Optional: Optimized VSCode Configuration
 
