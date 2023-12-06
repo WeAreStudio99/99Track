@@ -11,19 +11,23 @@ datasource db {
 }
 
 model User {
-  id       String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  email    String   @unique
-  username String
-  password String
-  objects  Object[]
-  steps    Step[]
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email     String   @unique
+  username  String
+  password  String
+  objects   Object[]
+  steps     Step[]
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
 }
 
 model Picture {
-  id     String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  url    String
-  step   Step   @relation(fields: [stepId], references: [id])
-  stepId String @unique @db.Uuid
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  url       String
+  step      Step     @relation(fields: [stepId], references: [id])
+  stepId    String   @unique @db.Uuid
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
 }
 
 model Step {
@@ -41,11 +45,15 @@ model Step {
   objectId         String   @unique @db.Uuid
   user             User?    @relation(fields: [userId], references: [id])
   userId           String?  @db.Uuid
+  updatedAt        DateTime @updatedAt
+  createdAt        DateTime @default(now())
 }
 
 model Object {
-  id    String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  name  String
-  steps Step[]
-  users User[]
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name      String
+  steps     Step[]
+  users     User[]
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
 }
