@@ -6,9 +6,7 @@ Welcome to the **99Track-api** development environment setup guide. This documen
 
 ### Node.js
 
-To synchronize Node.js versions across different environments, we recommend
-using [NVM (Node Version Manager)](https://github.com/nvm-sh/nvm). Once installed, you can set the project's Node.js
-version with the following command:
+We use [NVM (Node Version Manager)](https://github.com/nvm-sh/nvm) to maintain a consistent Node.js version. Install NVM and set the Node.js version for this project with::
 
 ```bash
 nvm install
@@ -16,8 +14,8 @@ nvm install
 
 ### Yarn
 
-Yarn is the package manager of choice for this project. After ensuring you are using Node.js 20 _(lts/iron)_,
-activate `corepack` to use Yarn by running:
+Yarn is the package manager of choice for this project. Ensure you are using Node.js 20 _(lts/iron)_ and then
+activate `corepack` to use Yarn :
 
 ```bash
 corepack enable
@@ -29,10 +27,9 @@ Uniformity in the TypeScript version used across different development setups is
 you [use the workspace version of TypeScript](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript)
 rather than the built-in version provided by VSCode.
 
-### Optional: Optimized Editor Configuration
+### Optional: Optimized VSCode Configuration
 
-For an enhanced development experience with project-specific editor settings, copy the `.vscode.sample` folder to your
-workspace configuration folder `.vscode`:
+For an enhanced development experience with project-specific editor settings, duplicate `.vscode.sample` as `.vscode` :
 
 ```bash
 cp -R .vscode.sample .vscode
