@@ -50,18 +50,18 @@ export class ObjectsController {
   }
 
   @Get(':id')
-  findOne(@Param() param: FindObjectParamDto) {
-    const { id } = param;
+  findOne(@Param() params: FindObjectParamDto) {
+    const { id } = params;
 
     return this.objectsService.findOne(id);
   }
 
   @Patch(':id')
   update(
-    @Param() param: UpdateObjectParamDto,
+    @Param() params: UpdateObjectParamDto,
     @Body() payload: UpdateObjectPayloadDto,
   ) {
-    const { id } = param;
+    const { id } = params;
 
     const data: UpdateObjectDataDto = payload;
 
@@ -69,8 +69,8 @@ export class ObjectsController {
   }
 
   @Delete(':id')
-  remove(@Param() param: DeleteObjectParamDto) {
-    const { id } = param;
+  remove(@Param() params: DeleteObjectParamDto) {
+    const { id } = params;
 
     return this.objectsService.remove(id);
   }

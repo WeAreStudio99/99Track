@@ -46,18 +46,18 @@ export class UsersController {
   }
 
   @Get(':id')
-  findOne(@Param() param: FindUserParamDto) {
-    const { id } = param;
+  findOne(@Param() params: FindUserParamDto) {
+    const { id } = params;
 
     return this.usersService.findOne(id);
   }
 
   @Patch(':id')
   update(
-    @Param() param: UpdateUserParamDto,
+    @Param() params: UpdateUserParamDto,
     @Body() payload: UpdateUserPayloadDto,
   ) {
-    const { id } = param;
+    const { id } = params;
 
     const data: UpdateUserDataDto = payload;
 
@@ -65,8 +65,8 @@ export class UsersController {
   }
 
   @Delete(':id')
-  remove(@Param() param: DeleteUserParamDto) {
-    const { id } = param;
+  remove(@Param() params: DeleteUserParamDto) {
+    const { id } = params;
 
     return this.usersService.remove(id);
   }

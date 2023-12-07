@@ -6,7 +6,7 @@ import { UpdateObjectDataDto } from './dto/update-object.dto';
 
 @Injectable()
 export class ObjectsService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) {}
 
   async create(data: CreateObjectDataDto) {
     // TODO : replace this query by the user id extracted from auth cookie

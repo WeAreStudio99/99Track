@@ -6,7 +6,7 @@ import { FindAllUsersOptionsDto } from './dto/find-all-users.dto';
 
 @Injectable()
 export class UsersService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) {}
 
   create(data: CreateUserDataDto) {
     return this.prisma.user.create({ data });

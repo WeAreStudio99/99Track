@@ -46,18 +46,18 @@ export class StepsController {
   }
 
   @Get(':id')
-  findOne(@Param() param: FindStepParamDto) {
-    const { id } = param;
+  findOne(@Param() params: FindStepParamDto) {
+    const { id } = params;
 
     return this.stepsService.findOne(id);
   }
 
   @Patch(':id')
   update(
-    @Param() param: UpdateStepParamDto,
+    @Param() params: UpdateStepParamDto,
     @Body() payload: UpdateStepPayloadDto,
   ) {
-    const { id } = param;
+    const { id } = params;
 
     const data: UpdateStepDataDto = payload;
 
@@ -65,8 +65,8 @@ export class StepsController {
   }
 
   @Delete(':id')
-  remove(@Param() param: DeleteStepParamDto) {
-    const { id } = param;
+  remove(@Param() params: DeleteStepParamDto) {
+    const { id } = params;
 
     return this.stepsService.remove(id);
   }
