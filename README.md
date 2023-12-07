@@ -40,6 +40,22 @@ cp -R .vscode.sample .vscode
 Ensure that you follow the sections below in sequence to set up your development environment without issues.
 Documentation is provided to guide you through the major setup steps.
 
+### Local infrastructure setup
+
+This project uses Docker Compose to setting up the local infrastructure. If you don't already have, install the Compose tooling following the [official documentation](https://docs.docker.com/compose/install/).
+
+Then launch the infrastructure applications :
+
+```bash
+docker compose up
+```
+
+You can also stop these applications :
+
+```bash
+docker compose down
+```
+
 ### Environment Configuration
 
 Initiate by setting up environment variables. Duplicate `.env.local.example` as `.env.local`:
