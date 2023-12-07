@@ -24,7 +24,7 @@ model User {
 model Picture {
   id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   url       String
-  step      Step     @relation(fields: [stepId], references: [id])
+  step      Step     @relation(fields: [stepId], references: [id], onDelete: Cascade)
   stepId    String   @unique @db.Uuid
   updatedAt DateTime @updatedAt
   createdAt DateTime @default(now())
@@ -41,9 +41,9 @@ model Step {
   speed            Float?
   description      String?
   picture          Picture?
-  object           Object   @relation(fields: [objectId], references: [id])
+  object           Object   @relation(fields: [objectId], references: [id], onDelete: Cascade)
   objectId         String   @unique @db.Uuid
-  user             User?    @relation(fields: [userId], references: [id])
+  user             User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
   userId           String?  @db.Uuid
   updatedAt        DateTime @updatedAt
   createdAt        DateTime @default(now())
