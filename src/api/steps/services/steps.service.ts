@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
-import { CreateStepDataDto } from './dto/create-step.dto';
-import { FindAllStepsOptionsDto } from './dto/find-all-steps.dto';
-import { UpdateStepDataDto } from './dto/update-step.dto';
+import { CreateStepDataDto } from '../dto/create-step.dto';
+import { FindAllStepsOptionsDto } from '../dto/find-all-steps.dto';
+import { UpdateStepDataDto } from '../dto/update-step.dto';
+import { PrismaService } from '@Shared/prisma/services/prisma.service';
 
 @Injectable()
 export class StepsService {

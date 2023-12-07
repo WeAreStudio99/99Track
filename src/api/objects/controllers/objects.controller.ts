@@ -8,23 +8,22 @@ import {
   Post,
   Query,
 } from '@nestjs/common';
-import { ObjectsService } from './objects.service';
+import { ObjectsService } from '../services/objects.service';
 import {
   CreateObjectDataDto,
   CreateObjectPayloadDto,
-} from './dto/create-object.dto';
+} from '../dto/create-object.dto';
 import {
   FindAllObjectsOptionsDto,
   FindAllObjectsQueryDto,
-} from './dto/find-all-objects.dto';
-
+} from '../dto/find-all-objects.dto';
+import { FindObjectParamDto } from '../dto/find-object.dto';
 import {
   UpdateObjectDataDto,
   UpdateObjectParamDto,
   UpdateObjectPayloadDto,
-} from './dto/update-object.dto';
-import { DeleteObjectParamDto } from './dto/delete-object.dto';
-import { FindObjectParamDto } from './dto/find-object.dto';
+} from '../dto/update-object.dto';
+import { DeleteObjectParamDto } from '../dto/delete-object.dto';
 
 @Controller('objects')
 export class ObjectsController {

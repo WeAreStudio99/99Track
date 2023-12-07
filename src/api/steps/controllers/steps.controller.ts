@@ -8,19 +8,22 @@ import {
   Post,
   Query,
 } from '@nestjs/common';
-import { StepsService } from './steps.service';
-import { CreateStepDataDto, CreateStepPayloadDto } from './dto/create-step.dto';
+import { StepsService } from '../services/steps.service';
+import {
+  CreateStepDataDto,
+  CreateStepPayloadDto,
+} from '../dto/create-step.dto';
 import {
   FindAllStepsOptionsDto,
   FindAllStepsQueryDto,
-} from './dto/find-all-steps.dto';
-import { FindStepParamDto } from './dto/find-step.dto';
+} from '../dto/find-all-steps.dto';
+import { FindStepParamDto } from '../dto/find-step.dto';
 import {
   UpdateStepDataDto,
   UpdateStepParamDto,
   UpdateStepPayloadDto,
-} from './dto/update-step.dto';
-import { DeleteStepParamDto } from './dto/delete-step.dto';
+} from '../dto/update-step.dto';
+import { DeleteStepParamDto } from '../dto/delete-step.dto';
 
 @Controller('steps')
 export class StepsController {

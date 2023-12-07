@@ -78,7 +78,7 @@ $ yarn run start:prod
 This project is using [Prisma](https://www.prisma.io/) to manage the database structure. Synchronize your database with the state described in `schema.primsa` and generate the associated [Prisma Client](https://www.prisma.io/docs/concepts/components/prisma-client) :
 
 ```bash
-yarn run db:synch
+yarn run db:sync
 ```
 
 This command must be run after initial setup and subsequent schema.prisma updates.

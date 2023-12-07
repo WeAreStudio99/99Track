@@ -8,19 +8,22 @@ import {
   Delete,
   Query,
 } from '@nestjs/common';
-import { UsersService } from './users.service';
-import { CreateUserDataDto, CreateUserPayloadDto } from './dto/create-user.dto';
+import { UsersService } from '../services/users.service';
+import {
+  CreateUserDataDto,
+  CreateUserPayloadDto,
+} from '../dto/create-user.dto';
+import {
+  FindAllUsersOptionsDto,
+  FindAllUsersQueryDto,
+} from '../dto/find-all-users.dto';
+import { FindUserParamDto } from '../dto/find-user.dto';
 import {
   UpdateUserDataDto,
   UpdateUserParamDto,
   UpdateUserPayloadDto,
-} from './dto/update-user.dto';
-import { DeleteUserParamDto } from './dto/delete-user.dto';
-import {
-  FindAllUsersOptionsDto,
-  FindAllUsersQueryDto,
-} from './dto/find-all-users.dto';
-import { FindUserParamDto } from './dto/find-user.dto';
+} from '../dto/update-user.dto';
+import { DeleteUserParamDto } from '../dto/delete-user.dto';
 
 @Controller('users')
 export class UsersController {
