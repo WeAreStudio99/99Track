@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
-import { CreateObjectDataDto } from './dto/create-object.dto';
-import { FindAllObjectsOptionsDto } from './dto/find-all-objects.dto';
-import { UpdateObjectDataDto } from './dto/update-object.dto';
+import { CreateObjectDataDto } from '../dto/create-object.dto';
+import { FindAllObjectsOptionsDto } from '../dto/find-all-objects.dto';
+import { UpdateObjectDataDto } from '../dto/update-object.dto';
+import { PrismaService } from '@Shared/prisma/services/prisma.service';
 
 @Injectable()
 export class ObjectsService {
