@@ -1,0 +1,41 @@
+name: Bug Report
+description: File a bug report
+title: "[Feature]: "
+labels: ["feature", "triage"]
+#projects: [""]
+assignees: ["ThibaultWalterspieler","alex-mngt"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this feature request!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: feature-request
+    attributes:
+      label: Describe the feature you'd like
+      placeholder: Tell us what you see for the future of this project!
+      value: "A feature request happened!"
+    validations:
+      required: true
+  - type: textarea
+    id: how-would-you-do-it
+    attributes:
+      label: How would you do it?
+      description: How would you implement this feature?
+      value: "I would do it like this!"
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
